@@ -11,6 +11,10 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+# Atom feed
+generate_feed = true
+feed_filename = "atom.xml"
+
 taxonomies = [
     {name = "tags", lang = "en", rss = true, paginate_by = 10},
     {name = "series", lang = "en", rss = true, paginate_by = 10},
@@ -27,6 +31,7 @@ author = "Hemanth Bollamreddi"
 social = [
     {name = "github", url = "https://github.com/blmhemu"},
     {name = "linkedin", url = "https://www.linkedin.com/in/blmhemu"},
+    {name = "rss", url = "/atom.xml"},
 ]
 display_posts = 3
 
