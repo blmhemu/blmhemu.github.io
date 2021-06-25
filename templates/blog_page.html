@@ -7,12 +7,12 @@
     {# TODO: Add breadcrumbs #}
     {# {{ partial "breadcrumbs.html" . }} #}
     <h1 class="post-title">
-      {{ page.title }}
+      {{ page.title | safe }}
       {# TODO: Add draft support #}
     </h1>
     {%- if page.description %}
     <div class="post-description">
-      {{ page.description }}
+      {{ page.description | safe }}
     </div>
     {%- endif %}
     <div class="post-meta">
@@ -27,7 +27,7 @@
   {{- partial "toc.html" . }}
   {{- end }} #}
   <div class="post-content">
-    {{ page.content }}
+    {{ page.content | safe }}
     {# TODO: Heading id and anchor insertion #}
     {# {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}

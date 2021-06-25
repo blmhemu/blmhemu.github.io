@@ -12,13 +12,13 @@
   {# TODO: Add cover image #}
   <header class="entry-header">
     <h2>
-      {{- page.title }}
+      {{- page.title | safe }}
       {# TODO: Add draft sup #}
     </h2>
   </header>
   <section class="entry-content">
     <p>
-      {{ page.summary }}
+      {{ page.summary | safe }}
       {# TODO: Truncate if long (already does it by default ??) #}
     </p>
   </section>
