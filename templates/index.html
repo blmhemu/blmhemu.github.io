@@ -18,6 +18,11 @@
         {{- macros_svg::svg(name=social.name) }}
       </a>
       {% endfor -%}
+      {% if config.feed_enabled -%}
+      <a href="{{ get_url(path=config.feed_filename, trailing_slash=false) }}" target="_blank" rel="noopener noreferrer me" title="{{ social.name | title }}">
+        {{- macros_svg::svg(name="rss") }}
+      </a>
+      {% endif -%}
     </div>
     {% endif -%}
   </footer>
