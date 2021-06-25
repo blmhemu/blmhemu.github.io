@@ -27,7 +27,7 @@
   {{- partial "toc.html" . }}
   {{- end }} #}
   <div class="post-content">
-    {{ page.content | safe }}
+    {{ page.content }}
     {# TODO: Heading id and anchor insertion #}
     {# {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}

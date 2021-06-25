@@ -3,7 +3,7 @@
 {% block main %}
 <header class="page-header">
     {# TODO: Breadcrumbs #}
-    <h1>{{ term.name | safe }}</h1>
+    <h1>{{ term.name }}</h1>
     {# TODO: Description #}
 </header>
 {# TODO: Sort ? #}
@@ -18,7 +18,7 @@
   </header>
   <section class="entry-content">
     <p>
-      {{ page.summary | safe }}
+      {{ page.summary }}
       {# TODO: Truncate if long (already does it by default ??) #}
     </p>
   </section>

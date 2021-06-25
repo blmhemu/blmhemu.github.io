@@ -4,11 +4,11 @@
 {%- block main %}
 <article class="first-entry home-info">
   <header class="entry-header">
-    <h1>{{ config.title | safe }}</h1>
-    <p>{{ section.description | safe }}</p>
+    <h1>{{ config.title }}</h1>
+    <p>{{ section.description }}</p>
   </header>
   <section class="entry-content">
-    {{ section.content | safe -}}
+    {{ section.content -}}
   </section>
   <footer class="entry-footer">
     {% if config.extra.social -%}
@@ -39,7 +39,7 @@
   </header>
   <section class="entry-content">
     <p>
-      {{ page.summary | safe }}
+      {{ page.summary }}
       {# TODO: Truncate if long (already does by default ??) #}
     </p>
   </section>
