@@ -10,7 +10,7 @@
 </head>
 
 {# TODO: Add dark mode support #}
-<body class="list" id="top">
+<body class="{% if not page %}list{% endif %}" id="top">
   {{- macros_header::header(current_section=current_path | default(value="")) -}}
   <main class="main">
     {%- block main %} 
