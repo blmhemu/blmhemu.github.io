@@ -3,45 +3,44 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-{% set title = config.title %}
+{%- set title = config.title -%}
 {% if page.title %}
-{% set title = title ~ " | " ~ page.title %}
+{%- set title = title ~ " | " ~ page.title -%}
 {% elif section.title %}
-{% set title = title ~ " | " ~ section.title %}
+{%- set title = title ~ " | " ~ section.title -%}
 {% elif term.name %}
-{% set term_name = term.name | capitalize %}
-{% set title = title ~ " | " ~ term_name %}
+{%- set term_name = term.name | capitalize -%}
+{%- set title = title ~ " | " ~ term_name -%}
 {% elif taxonomy.name %}
-{% set taxonomy_name = taxonomy.name | capitalize %}
-{% set title = title ~ " | " ~ taxonomy_name %}
-{% endif -%}
+{%- set taxonomy_name = taxonomy.name | capitalize -%}
+{%- set title = title ~ " | " ~ taxonomy_name -%}
+{% endif %}
 <title>{{ title }}</title>
 {% if page.taxonomies.tags %}
 <meta name="keywords" content="{{ page.taxonomies.tags | join(sep=", ") }}" />
 {% endif %}
-{% set desc = page.description | 
+{%- set desc = page.description | 
     default(value=page.description | 
     default(value=page.summary | 
     default(value=section.description |
     default(value=config.description
-    )))) %}
+    )))) -%}
 <meta name="description" content="{{ desc }}">
 <meta name="author" content="{{ page.extra.author | default(value=config.extra.author)}}">
-
-{% set permalink = page.permalink | 
+{%- set permalink = page.permalink | 
     default(value=paginator.permalink | 
     default(value=section.permalink | 
     default(value=term.permalink |
     default(value=taxonomy.permalink |
     default(value="404"
-    ))))) %}
+    ))))) -%}
 <meta property="og:title" content="{{ title }}" />
 <meta property="og:description" content="{{ desc }}" />
 <meta property="og:type" content="{% if page %}article{% else %}website{% endif %}" />
 <meta property="og:url" content="{{ permalink }}" />
 {# TODO: More open graph #}
-{% endmacro %}
+{%- endmacro -%}
 
-{% macro stylesheet() %}
+{% macro stylesheet() -%}
 <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
 {% endmacro %}
