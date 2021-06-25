@@ -9,7 +9,8 @@
   {{- macros_head::stylesheet() -}}
 </head>
 
-<body>
+{# TODO: Add dark mode support #}
+<body class="list" id="top">
   {{- macros_header::header(current_section=current_path | default(value="")) -}}
   <main class="main">
     {%- block main %} 
