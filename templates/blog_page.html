@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% import 'macros/post_meta.html' as macros_post_meta %}
+{% import 'macros/post_nav_links.html' as macros_post_nav_links %}
+{% block main %}
+<article class="post-single">
+  <header class="post-header">
+    {# TODO: Add breadcrumbs #}
+    {# {{ partial "breadcrumbs.html" . }} #}
+    <h1 class="post-title">
+      {{ page.title }}
+      {# TODO: Add draft support #}
+    </h1>
+    {%- if page.description %}
+    <div class="post-description">
+      {{ page.description }}
+    </div>
+    {%- endif %}
+    <div class="post-meta">
+      {{ macros_post_meta::post_meta(post=page) }}
+      {# TODO: Add translations list and suggest edits #}
+    </div>
+  </header>
+  {# TODO: Table of contents #}
+  {# {{- $isHidden := .Params.cover.hidden | default .Site.Params.cover.hiddenInSingle | default .Site.Params.cover.hidden }}
+  {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
+  {{- if (.Param "ShowToc") }}
+  {{- partial "toc.html" . }}
+  {{- end }} #}
+  <div class="post-content">
+    {{ page.content | safe }}
+    {# TODO: Heading id and anchor insertion #}
+    {# {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }} #}
+  </div>
+  {# TODO: Footer #}
+  <footer class="post-footer">
+    {% if page.taxonomies.tags %}
+    <ul class="post-tags">
+      {% for tag in page.taxonomies.tags %}
+      <li><a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if page.taxonomies.series %}
+    <ul class="post-tags">
+      {% for series in page.taxonomies.series %}
+      <li><a href="{{ get_taxonomy_url(kind="series", name=series) }}">{{ series }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {{ macros_post_nav_links::post_nav_links(post=page) }}
+    {# TODO: Add share icons #}
+    {# {{- if (and .Site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+    {{- partial "share_icons.html" . -}}
+    {{- end }} #}
+  </footer>
+  {# TODO: Comments #}
+  {# {{- if (.Param "comments") }}
+  {{- partial "comments.html" . }}
+  {{- end }} #}
+</article>
+{% endblock main %}

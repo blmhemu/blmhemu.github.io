@@ -1,0 +1,20 @@
+{% macro post_nav_links(post) %}
+{% if post.earlier or post.later %}
+<nav class="paginav">
+    {% if post.later %}
+    <a class="prev" href="{{ post.later.permalink }}">
+      <span class="title">« Newer Post</span>
+      <br>
+      <span>{{- post.later.title -}}</span>
+    </a>
+    {% endif %}
+    {% if post.earlier %}
+    <a class="next" href="{{ post.earlier.permalink }}">
+      <span class="title">Older Post »</span>
+      <br>
+      <span>{{- post.earlier.title -}}</span>
+    </a>
+    {% endif %}
+</nav>
+{% endif %}
+{% endmacro %}

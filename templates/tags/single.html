@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% import 'macros/post_meta.html' as macros_post_meta -%}
+{% block main %}
+<header class="page-header">
+    {# TODO: Breadcrumbs #}
+    <h1>{{ term.name | safe }}</h1>
+    {# TODO: Description #}
+</header>
+{# TODO: Sort ? #}
+{% for page in paginator.pages %}
+<article class="post-entry">
+  {# TODO: Add cover image #}
+  <header class="entry-header">
+    <h2>
+      {{- page.title }}
+      {# TODO: Add draft sup #}
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>
+      {{ page.summary | safe }}
+      {# TODO: Truncate if long (already does it by default ??) #}
+    </p>
+  </section>
+  <footer class="entry-footer">
+    {{ macros_post_meta::post_meta(post=page) }}
+  </footer>
+  {# TODO: Cleanse aria-label of html #}
+  <a class="entry-link" aria-label="post link to {{ page.title | safe }}" href="{{ page.permalink | safe }}"></a>
+</article>
+{% endfor %}
+{% if paginator.number_pagers > 1 %}
+<footer class="page-footer">
+  <nav class="pagination">
+    {% if paginator.previous %}
+    <a class="prev" href="{{ paginator.previous | safe }}">« Newer</a>
+    {% endif %}
+    {% if paginator.next %}
+    <a class="next" href="{{ paginator.next | safe }}">Older »</a>
+    {% endif %}
+  </nav>
+</footer>
+{% endif %}
+{% endblock main %}

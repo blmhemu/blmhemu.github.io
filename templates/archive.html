@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% import 'macros/post_meta.html' as macros_post_meta -%}
+{% block main %}
+<header class="page-header">
+  <h1>{{ section.title }}</h1>
+  {% if section.description %}
+  <div class="post-description">
+    {{ section.description }}
+  </div>
+  {% endif %}
+</header>
+{% for year, yearly_posts in paginator.pages | group_by(attribute="year") %}
+<div class="archive-year">
+  <h2 class="archive-year-header">
+    {{ year }}<sup class="archive-count">&nbsp;&nbsp;{{ yearly_posts | length }}</sup>
+  </h2>
+  {% for month, monthly_posts in yearly_posts | group_by(attribute="month") %}
+  <div class="archive-month">
+    <h3 class="archive-month-header">
+      {# TODO: See if there is a cleaner way to do this #}
+      {{ monthly_posts[0].date | date(format="%B") }}
+      {# {{ "2000-" ~ month ~ "-1" | date(format="%B") }} #}
+      <sup class="archive-count">&nbsp;&nbsp;{{ monthly_posts | length }}</sup>
+    </h3>
+    <div class="archive-posts">
+      {% for post in monthly_posts %}
+      <div class="archive-entry">
+        <h3 class="archive-entry-title">
+          {{- post.title | safe }}
+        </h3>
+        <div class="archive-meta">
+          {{macros_post_meta::post_meta(post=post)}}
+        </div>
+        {# TODO: Cleanse aria-label of html #}
+        <a class="entry-link" aria-label="Post link to {{ post.title | safe }}" href="{{ post.permalink | safe }}"/></a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endfor %}
+{% if paginator.number_pagers > 1 %}
+<footer class="page-footer">
+  <nav class="pagination">
+    {% if paginator.previous %}
+    <a class="prev" href="{{ paginator.previous | safe }}">« Newer</a>
+    {% endif %}
+    {% if paginator.next %}
+    <a class="next" href="{{ paginator.next | safe }}">Older »</a>
+    {% endif %}
+  </nav>
+</footer>
+{% endif %}
+{% endblock main %}

@@ -1,0 +1,20 @@
+{% macro post_meta(post) %}
+{% set metas = [] %}
+{% if post.date %}
+{% set formatted_date = post.date | date(format="%b %d, %Y") %}
+{% set metas = metas | concat(with=formatted_date) %}
+{% endif %}
+{% if post.reading_time %}
+{% set metas = metas | concat(with=post.reading_time ~ " min") %}
+{% endif %}
+{% if post.extra.author %}
+{% set metas = metas | concat(with=post.extra.author) %}
+{% elif config.extra.author %}
+{% set metas = metas | concat(with=config.extra.author) %}
+{% endif %}
+{% if post.updated %}
+{% set formatted_date = post.updated | date(format="%b %d, %Y") %}
+{% set metas = metas | concat(with="Updated " ~ formatted_date) %}
+{% endif %}
+{{ metas | join(sep="&nbsp;·&nbsp;") | safe }}
+{% endmacro %}

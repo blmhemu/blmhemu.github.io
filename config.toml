@@ -1,0 +1,62 @@
+# The URL the site will be built for
+base_url = "https://bhemu.com"
+
+# The site title and description; used in feeds by default.
+title = "Hemanth Bollamreddi"
+description = "Random DIY stuff"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+taxonomies = [
+    {name = "tags", lang = "en", rss = true, paginate_by = 10},
+    {name = "series", lang = "en", rss = true, paginate_by = 10},
+]
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+# Put all your custom variables here
+author = "Hemanth Bollamreddi"
+social = [
+    {name = "github", url = "https://github.com/blmhemu"},
+    {name = "linkedin", url = "https://www.linkedin.com/in/blmhemu"},
+]
+display_posts = 3
+
+# Menu items
+[[extra.menu.main]]
+name = "Archive"
+section = "archive"
+href = "/archive/"
+weight = 10
+
+[[extra.menu.main]]
+name = "Tags"
+section = "tags"
+href = "/tags/"
+weight = 10
+
+[[extra.menu.main]]
+name = "Series"
+section = "series"
+href = "/series/"
+weight = 10
+
+[[extra.menu.main]]
+name = "Search"
+section = "search"
+href = "/search/"
+weight = 10
+
+[[extra.menu.main]]
+name = "Projects"
+section = "projects"
+href = "/projects/"
+weight = 10

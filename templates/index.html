@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% import 'macros/post_meta.html' as macros_post_meta -%}
+{% import 'macros/svg.html' as macros_svg -%}
+{% block main %}
+<article class="first-entry home-info">
+    <header class="entry-header">
+      <h1>{{ config.title | safe }}</h1>
+      <p>{{ section.description | safe }}</p>
+    </header>
+    <section class="entry-content">
+      <p>{{ section.content | safe }}</p>
+    </section>
+    <footer class="entry-footer">
+      {% if config.extra.social %}
+      <div class="social-icons">
+        {% for social in config.extra.social %}
+        <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer me" title="{{ social.name | title }}">
+          {{ macros_svg::svg(name=social.name) }}
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </footer>
+</article>
+{% set section = get_section(path="archive/_index.md") %}
+{% for page in section.pages | slice(end=config.extra.display_posts) %}
+<article class="post-entry">
+  {# TODO: Add cover image #}
+  <header class="entry-header">
+    <h2>
+      {{- page.title }}
+      {# TODO: Add draft sup #}
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>
+      {{ page.summary | safe }}
+      {# TODO: Truncate if long (already does by default ??) #}
+    </p>
+  </section>
+  <footer class="entry-footer">
+    {{ macros_post_meta::post_meta(post=page) }}
+  </footer>
+  {# TODO: Cleanse aria-label of html #}
+  <a class="entry-link" aria-label="post link to {{ page.title | safe }}" href="{{ page.permalink | safe }}"></a>
+</article>
+{% endfor %}
+{% if section.pages | length > config.extra.display_posts %}
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="more" href="{{ section.permalink | safe }}">More Posts</a>
+  </nav>
+</footer>
+{% endif %}
+{% endblock main %}
