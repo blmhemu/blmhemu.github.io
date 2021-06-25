@@ -37,7 +37,7 @@
 <meta property="og:title" content="{{ title }}" />
 <meta property="og:description" content="{{ desc }}" />
 <meta property="og:type" content="{% if page %}article{% else %}website{% endif %}" />
-<meta property="og:url" content="{{ permalink }}" />
+<meta property="og:url" content="{{ permalink | safe }}" />
 {# TODO: More open graph #}
 {%- endmacro %}
 

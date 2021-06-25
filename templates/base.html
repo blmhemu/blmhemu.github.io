@@ -10,9 +10,10 @@
 </head>
 
 <body>
-  {{ macros_header::header(current_section=current_path | default(value="")) }}
+  {{- macros_header::header(current_section=current_path | default(value="")) -}}
   <main class="main">
-    {% block main %} {% endblock %}
+    {%- block main %} 
+    {% endblock main -%}
   </main>
   {{ macros_footer::footer() }}
 </body>
