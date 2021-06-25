@@ -28,8 +28,8 @@
 <meta name="description" content="{{ desc }}">
 <meta name="author" content="{{ page.extra.author | default(value=config.extra.author)}}">
 {% if config.generate_feed -%}
-<link rel="alternate" type="application/atom+xml" title="Atom" href="{{ get_url(path=config.feed_filename, trailing_slash=false) }}">
-{% endif %}
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{{ get_url(path=config.feed_filename, trailing_slash=false) | safe }}">
+{% endif -%}
 {%- set permalink = page.permalink | 
     default(value=paginator.permalink | 
     default(value=section.permalink | 
