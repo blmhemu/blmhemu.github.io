@@ -24,4 +24,4 @@ Some extra-ordinary developers took this even further. You can make and present 
 * [slides](https://github.com/maaslalani/slides) 
 * [lookatme](https://github.com/d0c-s4vage/lookatme).
 
-I continue to be suprised by the power of markdown. This very post is written in markdown. Though Slidev is currently (as of June 2021) in beta, it is ready to be used in your next presentation. It may not replace Powerpoint or Prezi for everyone. But anyone with a basic knowledge of markdown can learn it quickly. I would definitely use it in my future presentations.
+I continue to be suprised by the power of markdown. This very post is written in markdown. Though Slidev is currently (as of June 2021) in beta, it is ready to be used in your next presentation. It may not replace Powerpoint or Prezi for everyone. But anyone with a basic knowledge of markdown can learn it in no time. I will be tracking this project and would definitely use it in my future presentations.
