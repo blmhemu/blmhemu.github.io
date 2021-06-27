@@ -17,10 +17,11 @@ A quick search, led me to [Marp](https://marp.app/). It was then I realized that
 
 ## Slidev
 For some unknown reason, I chose to learn Slidev. The slidev website is sleek and gives a glimpse of what you can do with the framework.
+* Create flow diagrams
 
 ## Bonus
 Some extra-ordinary developers took this even further. You can make and present slides in the **TERMINAL** ! 
 * [slides](https://github.com/maaslalani/slides) 
 * [lookatme](https://github.com/d0c-s4vage/lookatme).
 
-Overall, I love these tools and continue to be suprised by the power of markdown. Although it may not replace Powerpoint or Prezi for everyone, I would definitely be using Slidev in my future presentations.
+I continue to be suprised by the power of markdown. This very post is written in markdown. Though Slidev is currently (as of June 2021) in beta, it is ready to be used in your next presentation. It may not replace Powerpoint or Prezi for everyone. But anyone with a basic knowledge of markdown can learn it quickly. I would definitely use it in my future presentations.
