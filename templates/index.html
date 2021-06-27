@@ -39,7 +39,11 @@
   </header>
   <section class="entry-content">
     <p>
+      {% if page.summary %}
       {{ page.summary }}
+      {% elif page.description %}
+      {{ page.description }}
+      {% endif %}
       {# TODO: Truncate if long (already does by default ??) #}
     </p>
   </section>
