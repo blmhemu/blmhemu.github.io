@@ -20,7 +20,7 @@ For some unknown reason, I chose to learn Slidev. The [Slidev website](https://s
 * Easy splitting with `::left::`, `::right::` markdown extensions.
 * Mermaid support for drawing diagrams and flow diagrams **right in the markdown file**.
 
-The following features stand out and are probably exclusive only to Slidev
+The following features stand out and are probably exclusive to Slidev
 * Write live code in the ppt.
 * Recording the presentation with picture in picture camera view.
 * Crazy customization with HTML, CSS, and Vue.
