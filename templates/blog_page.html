@@ -51,11 +51,7 @@
     </ul>
     {% endif %}
     {{ macros_post_nav_links::post_nav_links(post=page) }}
-    {# TODO: Add share icons #}
-    {# {{- if (and .Site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
-    {{- partial "share_icons.html" . -}}
-    {{- end }} #}
-    {{ macros_share_icons::share_icons(pageurl=page.permalink, title=page.title, tags=page.taxonomies.tags) }}
+    {{ macros_share_icons::share_icons(pageurl=page.permalink, title=page.title, tags=page.taxonomies.tags | default(value=[])) }}
   </footer>
   {# TODO: Add dark mode #}
   <script src="https://utteranc.es/client.js"

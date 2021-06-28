@@ -1,16 +1,4 @@
-{% macro share_icons(pageurl, title, tags="") %}
-
-
-{#
-{{- $.Scratch.Set "tags" ""}}
-
-{{- with .Params.Tags }}
-{{ $hashtags := newScratch}}
-{{- range . }}{{ $hashtags.Add "tags" (slice (replaceRE "(\\s)" "" . ))}}{{end}}
-{{- $.Scratch.Set "tags" (delimit ($hashtags.Get "tags") ",") }}
-{{- end -}}
-#}
-
+{% macro share_icons(pageurl, title, tags) %}
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share {{ title | striptags }} on twitter"
         href="https://twitter.com/intent/tweet/?text={{ title }}&amp;url={{ pageurl }}&amp;hashtags={{- tags | join(sep=",") -}}">
