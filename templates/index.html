@@ -50,8 +50,7 @@
   <footer class="entry-footer">
     {{ macros_post_meta::post_meta(post=page) }}
   </footer>
-  {# TODO: Cleanse aria-label of html #}
-  <a class="entry-link" aria-label="post link to {{ page.title | safe }}" href="{{ page.permalink | safe }}"></a>
+  <a class="entry-link" aria-label="post link to {{ page.title | escape }}" href="{{ page.permalink | safe }}"></a>
 </article>
 {% endfor -%}
 {% if section.pages | length > config.extra.display_posts %}
