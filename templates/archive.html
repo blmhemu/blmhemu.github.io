@@ -31,7 +31,7 @@
         <div class="archive-meta">
           {{macros_post_meta::post_meta(post=post)}}
         </div>
-        <a class="entry-link" aria-label="Post link to {{ post.title | escape }}" href="{{ post.permalink | safe }}"/></a>
+        <a class="entry-link" aria-label="Post link to {{ post.title | striptags }}" href="{{ post.permalink | safe }}"/></a>
       </div>
       {% endfor %}
     </div>

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% import 'macros/post_meta.html' as macros_post_meta %}
 {% import 'macros/post_nav_links.html' as macros_post_nav_links %}
+{% import 'macros/share_icons.html' as macros_share_icons %}
 {% block main %}
 <article class="post-single">
   <header class="post-header">
@@ -54,6 +55,7 @@
     {# {{- if (and .Site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
     {{- partial "share_icons.html" . -}}
     {{- end }} #}
+    {{ macros_share_icons::share_icons(pageurl=page.permalink, title=page.title, tags=page.taxonomies.tags) }}
   </footer>
   {# TODO: Add dark mode #}
   <script src="https://utteranc.es/client.js"
