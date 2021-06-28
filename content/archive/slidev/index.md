@@ -1,7 +1,7 @@
 +++
 title = "Code awesome presentations with markdown"
 description = "Exploring open source software(s) helping developers write presentations as code."
-date = 2021-06-27
+date = 2021-06-28
 
 [taxonomies]
 tags = ["ppt", "markdown", "slidev"]
