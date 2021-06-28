@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Hemanth Bollamreddi</title>
+	<subtitle>Random DIY stuff</subtitle>
+	<link href="https://www.bhemu.com/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://www.bhemu.com"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2021-06-28T00:00:00+00:00</updated>
+	<id>https://www.bhemu.com/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Code awesome presentations with markdown</title>
+		<published>2021-06-28T00:00:00+00:00</published>
+		<updated>2021-06-28T00:00:00+00:00</updated>
+		<link href="https://www.bhemu.com/archive/slidev/" type="text/html"/>
+		<id>https://www.bhemu.com/archive/slidev/</id>
+		<content type="html">&lt;h2 id=&quot;backstory&quot;&gt;Backstory&lt;&#x2F;h2&gt;
+&lt;p&gt;Recently, I was going through the &lt;a href=&quot;https:&#x2F;&#x2F;talks.mrkaran.dev&#x2F;talks&#x2F;foss-united-apr-2021.html&quot;&gt;self-hosting 101&lt;&#x2F;a&gt; slides by &lt;a href=&quot;https:&#x2F;&#x2F;mrkaran.dev&#x2F;&quot;&gt;Karan Sharma&lt;&#x2F;a&gt;. Besides the content, the way the slides were presented as HTML pages caught my attention. I quickly opened up the inspect tool to find out more and found a few &lt;code&gt;bespoke-marp-slide&lt;&#x2F;code&gt; classes.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.bhemu.com&#x2F;archive&#x2F;slidev&#x2F;inspect.png&quot; alt=&quot;HTML Inspect tool on marp slides&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;A quick search led me to &lt;a href=&quot;https:&#x2F;&#x2F;marp.app&#x2F;&quot;&gt;Marp&lt;&#x2F;a&gt;. It was then I realized that unbeknownst, there are a whole bunch of software for making PPTs with existing OSS technologies. I found many JS packages targeted at this space. Some of them being &lt;a href=&quot;https:&#x2F;&#x2F;sli.dev&#x2F;&quot;&gt;Slidev&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;revealjs.com&#x2F;&quot;&gt;RevealJS&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;impress.js.org&#x2F;#&#x2F;bored&quot;&gt;ImpressJS&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;slidev&quot;&gt;Slidev&lt;&#x2F;h2&gt;
+&lt;p&gt;For some unknown reason, I chose to learn Slidev. The &lt;a href=&quot;https:&#x2F;&#x2F;sli.dev&#x2F;&quot;&gt;Slidev website&lt;&#x2F;a&gt; is sleek and gives a glimpse of what you can do with the framework. I frequently use code, splits, tables, flow charts, and diagrams in my ppts. Slidev makes it easy to do all of these tasks and more.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Code highlighting is built-in, and a first-class citizen.&lt;&#x2F;li&gt;
+&lt;li&gt;Easy splitting with &lt;code&gt;::left::&lt;&#x2F;code&gt;, &lt;code&gt;::right::&lt;&#x2F;code&gt; markdown extensions.&lt;&#x2F;li&gt;
+&lt;li&gt;Mermaid support for drawing diagrams and flow diagrams &lt;strong&gt;right in the markdown file&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The following features stand out and are probably unique to Slidev&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Write live code in the ppt.&lt;&#x2F;li&gt;
+&lt;li&gt;Recording the presentation with picture in picture camera view.&lt;&#x2F;li&gt;
+&lt;li&gt;Crazy customization with HTML, CSS, and Vue.&lt;&#x2F;li&gt;
+&lt;li&gt;KaTeX support.&lt;&#x2F;li&gt;
+&lt;li&gt;Edit slides on the fly.&lt;&#x2F;li&gt;
+&lt;li&gt;Export as pdf.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Overall, Slidev offers all the features required by developers on par (or even more) with popular proprietary software.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bonus&quot;&gt;Bonus&lt;&#x2F;h2&gt;
+&lt;p&gt;Some extra-ordinary developers took the idea even further, creating tools to make and present slides in the &lt;em&gt;TERMINAL&lt;&#x2F;em&gt; ! Here are some :&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;maaslalani&#x2F;slides&quot;&gt;slides&lt;&#x2F;a&gt; &lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;d0c-s4vage&#x2F;lookatme&quot;&gt;lookatme&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I continue to be surprised by the power of markdown (This very post is written in markdown). Though Slidev is currently (as of June 2021) in beta, it is ready to be used in your next presentation. It may not replace Powerpoint or Prezi for &lt;em&gt;everyone&lt;&#x2F;em&gt;. But anyone with a basic knowledge of markdown can learn it in no time. I will be tracking this project and would use it in my future presentations.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>
