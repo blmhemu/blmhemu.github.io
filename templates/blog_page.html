@@ -55,9 +55,14 @@
     {{- partial "share_icons.html" . -}}
     {{- end }} #}
   </footer>
-  {# TODO: Comments #}
-  {# {{- if (.Param "comments") }}
-  {{- partial "comments.html" . }}
-  {{- end }} #}
+  {# TODO: Add dark mode #}
+  <script src="https://utteranc.es/client.js"
+        repo="blmhemu/blmhemu.github.io"
+        issue-term="pathname"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
 </article>
 {% endblock main %}
