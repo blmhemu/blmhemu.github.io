@@ -26,6 +26,7 @@ The following features stand out and are probably exclusive only to Slidev
 * Crazy customization with HTML, CSS, and Vue.
 * KaTeX support.
 * Edit slides on the fly.
+* Export as pdf.
 
 Overall, Slidev offers all the features required by developers on par (or even more) with popular proprietary software.
 
