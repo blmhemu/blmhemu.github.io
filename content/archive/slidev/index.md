@@ -9,15 +9,15 @@ tags = ["ppt", "markdown", "slidev"]
 +++
 
 ## Backstory
-Recently, I was going through the [self-hosting 101](https://talks.mrkaran.dev/talks/foss-united-apr-2021.html) slides by [Karan Sharma](https://mrkaran.dev/). Along with the content, the way the slides were presented as HTML pages caught my attention. I quickly opened up the inspect tool to find out more and found a few `bespoke-marp-slide` classes.
+Recently, I was going through the [self-hosting 101](https://talks.mrkaran.dev/talks/foss-united-apr-2021.html) slides by [Karan Sharma](https://mrkaran.dev/). Besides the content, the way the slides were presented as HTML pages caught my attention. I quickly opened up the inspect tool to find out more and found a few `bespoke-marp-slide` classes.
 
 ![HTML Inspect tool on marp slides](inspect.png)
 
-A quick search led me to [Marp](https://marp.app/). It was then I realized that unbeknownst, there was a whole bunch of software for making PPTs with existing OSS technologies. I found many JS packages, targeted as this space. Some of them being [Slidev](https://sli.dev/), [RevealJS](https://revealjs.com/) and [ImpressJS](https://impress.js.org/#/bored).
+A quick search led me to [Marp](https://marp.app/). It was then I realized that unbeknownst, there was a whole bunch of software for making PPTs with existing OSS technologies. I found many JS packages targeted at this space. Some of them being [Slidev](https://sli.dev/), [RevealJS](https://revealjs.com/) and [ImpressJS](https://impress.js.org/#/bored).
 
 ## Slidev
-For some unknown reason, I chose to learn Slidev. The slidev website is sleek and gives a glimpse of what you can do with the framework. I frequently use code, splits, tables, flow charts and diagrams in my ppts. Slidev makes it easy to do all of these tasks and more.
-* Code highlighting is built-in and is a first-class citizen.
+For some unknown reason, I chose to learn Slidev. The slidev website is sleek and gives a glimpse of what you can do with the framework. I frequently use code, splits, tables, flow charts, and diagrams in my ppts. Slidev makes it easy to do all of these tasks and more.
+* Code highlighting is built-in, and a first-class citizen.
 * Easy splitting with `::left::`, `::right::` markdown extensions.
 * Mermaid support for drawing diagrams and flow diagrams right in the markdown file.
 
