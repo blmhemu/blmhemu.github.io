@@ -1,8 +1,7 @@
 +++
 title = "Code awesome presentations with markdown"
-description = "Exploring the open source software(s) helping developers write presentations as code."
+description = "Exploring open source software(s) helping developers write presentations as code."
 date = 2021-06-27
-draft = true
 
 [taxonomies]
 tags = ["ppt", "markdown", "slidev"]
@@ -19,7 +18,7 @@ A quick search led me to [Marp](https://marp.app/). It was then I realized that 
 For some unknown reason, I chose to learn Slidev. The slidev website is sleek and gives a glimpse of what you can do with the framework. I frequently use code, splits, tables, flow charts, and diagrams in my ppts. Slidev makes it easy to do all of these tasks and more.
 * Code highlighting is built-in, and a first-class citizen.
 * Easy splitting with `::left::`, `::right::` markdown extensions.
-* Mermaid support for drawing diagrams and flow diagrams right in the markdown file.
+* Mermaid support for drawing diagrams and flow diagrams **right in the markdown file**.
 
 The following features stand out and are probably exclusive only to Slidev
 * Write live code in the ppt.
@@ -28,11 +27,11 @@ The following features stand out and are probably exclusive only to Slidev
 * KaTeX support.
 * Edit slides on the fly.
 
-Overall, it offers all the features required by end-users on par (or even more) with popular proprietary software.
+Overall, Slidev offers all the features required by developers on par (or even more) with popular proprietary software.
 
 ## Bonus
-Some extra-ordinary developers took the idea even further, creating tools to make and present slides in the **TERMINAL** ! Here are some :
+Some extra-ordinary developers took the idea even further, creating tools to make and present slides in the *TERMINAL* ! Here are some :
 * [slides](https://github.com/maaslalani/slides) 
 * [lookatme](https://github.com/d0c-s4vage/lookatme).
 
-I continue to be surprised by the power of markdown. This very post is written in markdown. Though Slidev is currently (as of June 2021) in beta, it is ready to be used in your next presentation. It may not replace Powerpoint or Prezi for everyone. But anyone with a basic knowledge of markdown can learn it in no time. I will be tracking this project and would use it in my future presentations.
+I continue to be surprised by the power of markdown (This very post is written in markdown). Though Slidev is currently (as of June 2021) in beta, it is ready to be used in your next presentation. It may not replace Powerpoint or Prezi for *everyone*. But anyone with a basic knowledge of markdown can learn it in no time. I will be tracking this project and would use it in my future presentations.
