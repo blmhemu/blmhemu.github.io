@@ -2,17 +2,16 @@
 title = "Faster ZSH with zsh snap"
 description = "My experiments with plugin managers and how I ended up using zsh-snap."
 date = 2021-08-02
-draft = true
 
 [taxonomies]
 tags = ["zsh", "zsh-snap", "znap"]
 +++
 
 ## Intro
-Although not as ubiquitous as bash, zsh has many advantages over it. While fish is an even better shell than zsh, it does not offer the same level of **run any script (TM)** advantage like zsh. 
+Although not as ubiquitous as bash, zsh has many advantages over it. While fish is an even better shell than zsh, it does not offer the same level of **run any script &trade;** advantage like zsh.
 
 ## Plugins Managers
-To get the features offered by fish and more, people have created many plugins to make life easier. But who manages all these plugins ? Ofcourse the plugin managers. People new to ZSH are mostly introduced to [oh-my-zsh](https://ohmyz.sh/), an excellent software, easy to use, and integrates easily with most plugins. But after some time, as the number of plugins increase, the shell startup time increases. This is the major pain point of using this framework. To solve this issues and some, many managers were created. One of which I used is [zinit](https://zdharma.github.io/zinit/wiki/). Although it is a great plugin manager, it had a complex and very elaborate syntax. Though I stuck to it for sometime, I recently found out [zsh-snap](https://github.com/marlonrichert/zsh-snap)
+To get the features offered by fish and more, people have created many plugins to make life easier. But who manages all these plugins ? Ofcourse the plugin managers. People new to ZSH are commonly introduced to [oh-my-zsh](https://ohmyz.sh/), an excellent software, easy to use, and integrates easily with most plugins. But after some time, as the number of plugins increase, the shell startup time increases. This is the major pain point of using this framework. Many plugin managers were created to alleviate this pain point. One of which I used is [zinit](https://zdharma.github.io/zinit/wiki/). Although it is a great plugin manager, it had a complex and very elaborate syntax. Though I stuck to it for some time, I recently found out [zsh-snap](https://github.com/marlonrichert/zsh-snap)
 
 ## Enter zsh-snap
 Znap (short for zsh-snap) provides you all the advantages of zinit minus the complexity. Here is a snippet of my zsh configuration
@@ -42,9 +41,9 @@ znap eval zoxide "zoxide init zsh"
 # -- snipped --
 ```
 
-Recent plugin manager seem to embrace the idea of time to value (loading the prompt first) and let the user use a shell while loading the plugins asynchronously in background. This can be seen in the config as well. We first load the prompt (I use [starship](https://starship.rs/)), then install some completions, load a few plugins, run some inits and done ! Znap takes care of caching and will intelligently store data without the need to all commands on each run.
+Recent plugin managers seem to embrace the idea of time to value (loading the prompt first) and let the user use a shell while loading the plugins asynchronously in the background. The same behavior can be seen in the config as well. We first load the prompt (I use [starship](https://starship.rs/)), then install some completions, load a few plugins, run some inits, and done! Znap takes care of caching and will intelligently store data without running all commands on each run.
 
-Love something in oh-my-zsh or prezto ? You can use the libs / plugins like any other plugins.
+Love something in oh-my-zsh or prezto? You can use the libs/plugins like any other plugins.
 
 ## Plugins
 * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Gives hints based on your history.
