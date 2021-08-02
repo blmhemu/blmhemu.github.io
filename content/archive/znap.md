@@ -15,7 +15,7 @@ To get the features offered by fish and more, people have created many plugins t
 
 ## Enter zsh-snap
 Znap (short for zsh-snap) provides you all the advantages of zinit minus the complexity. Here is a snippet of my zsh configuration
-```
+```zsh
 source ~/.znap/zsh-snap/znap.zsh
 
 # Prompt
@@ -41,9 +41,9 @@ znap eval zoxide "zoxide init zsh"
 # -- snipped --
 ```
 
-Recent plugin managers seem to embrace the idea of time to value (loading the prompt first) and let the user use a shell while loading the plugins asynchronously in the background. The same behavior can be seen in the config as well. We first load the prompt (I use [starship](https://starship.rs/)), then install some completions, load a few plugins, run some inits, and done! Znap takes care of caching and will intelligently store data without running all commands on each run.
+Recent plugin managers seem to embrace the idea of time to value (loading the prompt first) and let the user use a shell while loading the plugins asynchronously in the background. The same behavior can be seen in the config as well. We first load the prompt (I use [starship](https://starship.rs/)), then install some completions, load a few plugins, run some inits, and done! Znap takes care of caching and will intelligently store data without running all commands on every run.
 
-Love something in oh-my-zsh or prezto? You can use the libs/plugins like any other plugins.
+Znap also offers good compatibility with wide range of plugins (Just be careful of the order in which you load plugins). Love something in oh-my-zsh or prezto? You can use the libs/plugins just like any other plugins.
 
 ## Plugins
 * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Gives hints based on your history.
