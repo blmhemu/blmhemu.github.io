@@ -7,4 +7,4 @@ Visit [bhemu.com](https://www.bhemu.com)
 * Theme ported from [PaperMod](https://adityatelange.github.io/hugo-PaperMod/) (thanks @adityatelange)
 * Comments powered by [Utterances](https://utteranc.es/)
 * Deployment on Github Pages. Automated with Github Actions.
-* No cookies or tracking.
+* No cookies or tracking (github or other intermediaries may still collect data).
