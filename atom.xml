@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Hemanth Bollamreddi</title>
+	<subtitle>Random DIY stuff</subtitle>
+	<link href="https://www.bhemu.com/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://www.bhemu.com"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2021-08-02T00:00:00+00:00</updated>
+	<id>https://www.bhemu.com/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Faster ZSH with zsh snap</title>
+		<published>2021-08-02T00:00:00+00:00</published>
+		<updated>2021-08-02T00:00:00+00:00</updated>
+		<link href="https://www.bhemu.com/archive/znap/" type="text/html"/>
+		<id>https://www.bhemu.com/archive/znap/</id>
+		<content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;&#x2F;h2&gt;
+&lt;p&gt;Although not as ubiquitous as bash, zsh has many advantages over it. While fish is an even better shell than zsh, it does not offer the same level of &lt;strong&gt;run any script ™&lt;&#x2F;strong&gt; advantage like zsh.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;plugins-managers&quot;&gt;Plugins Managers&lt;&#x2F;h2&gt;
+&lt;p&gt;To get the features offered by fish and more, people have created many plugins to make life easier. But who manages all these plugins ? Ofcourse the plugin managers. People new to ZSH are commonly introduced to &lt;a href=&quot;https:&#x2F;&#x2F;ohmyz.sh&#x2F;&quot;&gt;oh-my-zsh&lt;&#x2F;a&gt;, an excellent software, easy to use, and integrates easily with most plugins. But after some time, as the number of plugins increase, the shell startup time increases. This is the major pain point of using this framework. Many plugin managers were created to alleviate this pain point. One of which I used is &lt;a href=&quot;https:&#x2F;&#x2F;zdharma.github.io&#x2F;zinit&#x2F;wiki&#x2F;&quot;&gt;zinit&lt;&#x2F;a&gt;. Although it is a great plugin manager, it had a complex and very elaborate syntax. Though I stuck to it for some time, I recently found out &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marlonrichert&#x2F;zsh-snap&quot;&gt;zsh-snap&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;enter-zsh-snap&quot;&gt;Enter zsh-snap&lt;&#x2F;h2&gt;
+&lt;p&gt;Znap (short for zsh-snap) provides you all the advantages of zinit minus the complexity. Here is a snippet of my zsh configuration&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code class=&quot;language-zsh&quot; data-lang=&quot;zsh&quot;&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;source &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;~&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&#x2F;.znap&#x2F;zsh-snap&#x2F;znap.zsh
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Prompt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;znap eval starship &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;starship init zsh --print-full-init&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;znap&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt; prompt
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Completion functions
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;fpath+=( &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;~&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;ohmyzsh&#x2F;ohmyzsh&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&#x2F;plugins&#x2F;{docker,fd,ripgrep} )
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;znap&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt; compdef _rustup &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;rustup completions zsh&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;znap&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt; compdef _cargo  &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;rustup completions zsh cargo&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Plugins
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;znap source zsh-users&#x2F;zsh-autosuggestions
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;znap&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt; source zsh-users&#x2F;zsh-syntax-highlighting
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;znap&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt; source wfxr&#x2F;forgit
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;znap&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt; source sorin-ionescu&#x2F;prezto modules&#x2F;{environment,history}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;znap&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt; source ohmyzsh&#x2F;ohmyzsh &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;lib&#x2F;(*~(git|theme-and-appearance).zsh)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&amp;#39; plugins&#x2F;{git}
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Evals
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;znap eval zoxide &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;zoxide init zsh&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&amp;quot;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# -- snipped --
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Recent plugin managers seem to embrace the idea of time to value (loading the prompt first) and let the user use a shell while loading the plugins asynchronously in the background. The same behavior can be seen in the config as well. We first load the prompt (I use &lt;a href=&quot;https:&#x2F;&#x2F;starship.rs&#x2F;&quot;&gt;starship&lt;&#x2F;a&gt;), then install some completions, load a few plugins, run some inits, and done! Znap takes care of caching and will intelligently store data without running all commands on every run.&lt;&#x2F;p&gt;
+&lt;p&gt;Znap also offers good compatibility with wide range of plugins (Just be careful of the order in which you load plugins). Love something in oh-my-zsh or prezto? You can use the libs&#x2F;plugins just like any other plugins.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;plugins&quot;&gt;Plugins&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions&quot;&gt;zsh-autosuggestions&lt;&#x2F;a&gt; - Gives hints based on your history.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting&quot;&gt;zsh-syntax-highlighting&lt;&#x2F;a&gt; - Why should programming langs have all the &lt;del&gt;fun&lt;&#x2F;del&gt; colors ? Adds syntax colors for zsh commands.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;wfxr&#x2F;forgit&quot;&gt;forgit&lt;&#x2F;a&gt; - Forget Git ! Adds some flavour to git.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here is my &amp;quot;shell&amp;quot; tour:&lt;&#x2F;p&gt;
+&lt;script id=&quot;asciicast-428370&quot; src=&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;428370.js&quot; async&gt;&lt;&#x2F;script&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Code awesome presentations with markdown</title>
+		<published>2021-06-28T00:00:00+00:00</published>
+		<updated>2021-06-28T00:00:00+00:00</updated>
+		<link href="https://www.bhemu.com/archive/slidev/" type="text/html"/>
+		<id>https://www.bhemu.com/archive/slidev/</id>
+		<content type="html">&lt;h2 id=&quot;backstory&quot;&gt;Backstory&lt;&#x2F;h2&gt;
+&lt;p&gt;Recently, I was going through the &lt;a href=&quot;https:&#x2F;&#x2F;talks.mrkaran.dev&#x2F;talks&#x2F;foss-united-apr-2021.html&quot;&gt;self-hosting 101&lt;&#x2F;a&gt; slides by &lt;a href=&quot;https:&#x2F;&#x2F;mrkaran.dev&#x2F;&quot;&gt;Karan Sharma&lt;&#x2F;a&gt;. Besides the content, the way the slides were presented as HTML pages caught my attention. I quickly opened up the inspect tool to find out more and found a few &lt;code&gt;bespoke-marp-slide&lt;&#x2F;code&gt; classes.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.bhemu.com&#x2F;archive&#x2F;slidev&#x2F;inspect.png&quot; alt=&quot;HTML Inspect tool on marp slides&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;A quick search led me to &lt;a href=&quot;https:&#x2F;&#x2F;marp.app&#x2F;&quot;&gt;Marp&lt;&#x2F;a&gt;. It was then I realized that unbeknownst, there are a whole bunch of software for making PPTs with existing OSS technologies. I found many JS packages targeted at this space. Some of them being &lt;a href=&quot;https:&#x2F;&#x2F;sli.dev&#x2F;&quot;&gt;Slidev&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;revealjs.com&#x2F;&quot;&gt;RevealJS&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;impress.js.org&#x2F;#&#x2F;bored&quot;&gt;ImpressJS&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;slidev&quot;&gt;Slidev&lt;&#x2F;h2&gt;
+&lt;p&gt;For some unknown reason, I chose to learn Slidev. The &lt;a href=&quot;https:&#x2F;&#x2F;sli.dev&#x2F;&quot;&gt;Slidev website&lt;&#x2F;a&gt; is sleek and gives a glimpse of what you can do with the framework. I frequently use code, splits, tables, flow charts, and diagrams in my ppts. Slidev makes it easy to do all of these tasks and more.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Code highlighting is built-in, and a first-class citizen.&lt;&#x2F;li&gt;
+&lt;li&gt;Easy splitting with &lt;code&gt;::left::&lt;&#x2F;code&gt;, &lt;code&gt;::right::&lt;&#x2F;code&gt; markdown extensions.&lt;&#x2F;li&gt;
+&lt;li&gt;Mermaid support for drawing diagrams and flow diagrams &lt;strong&gt;right in the markdown file&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The following features stand out and are probably unique to Slidev&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Write live code in the ppt.&lt;&#x2F;li&gt;
+&lt;li&gt;Recording the presentation with picture in picture camera view.&lt;&#x2F;li&gt;
+&lt;li&gt;Crazy customization with HTML, CSS, and Vue.&lt;&#x2F;li&gt;
+&lt;li&gt;KaTeX support.&lt;&#x2F;li&gt;
+&lt;li&gt;Edit slides on the fly.&lt;&#x2F;li&gt;
+&lt;li&gt;Export as pdf.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Overall, Slidev offers all the features required by developers on par (or even more) with popular proprietary software.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bonus&quot;&gt;Bonus&lt;&#x2F;h2&gt;
+&lt;p&gt;Some extra-ordinary developers took the idea even further, creating tools to make and present slides in the &lt;em&gt;TERMINAL&lt;&#x2F;em&gt; ! Here are some :&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;maaslalani&#x2F;slides&quot;&gt;slides&lt;&#x2F;a&gt; &lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;d0c-s4vage&#x2F;lookatme&quot;&gt;lookatme&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I continue to be surprised by the power of markdown (This very post is written in markdown). Though Slidev is currently (as of June 2021) in beta, it is ready to be used in your next presentation. It may not replace Powerpoint or Prezi for &lt;em&gt;everyone&lt;&#x2F;em&gt;. But anyone with a basic knowledge of markdown can learn it in no time. I will be tracking this project and would use it in my future presentations.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>
